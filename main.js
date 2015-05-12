@@ -3,6 +3,8 @@ var tld = require("tldjs");
 
 var win = gui.Window.get();
 
+win.focus();
+
 if (process.platform === "darwin")
 {
 	var nativeMenuBar = new gui.Menu(
