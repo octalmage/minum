@@ -14,7 +14,7 @@ if (process.platform === "darwin")
 }
 
 //debug
-win.showDevTools();
+//win.showDevTools();
 
 win.on("document-end", function(frame) 
 {
