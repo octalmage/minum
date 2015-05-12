@@ -79,6 +79,7 @@ iframe
     transform: translateX(-50%);
     width: 600px;
     font-family: "Roboto", sans-serif;
+    font-weight: 100;
     outline: none;
     
 }
