@@ -1,4 +1,5 @@
 var gui = require("nw.gui");
+var tld = require("tldjs");
 
 var win = gui.Window.get();
 
