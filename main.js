@@ -18,19 +18,84 @@ if (process.platform === "darwin")
 //debug
 //win.showDevTools();
 
+//App loaded.
+$(function()
+{
+	//Close button.
+	$("#closeButton").on("mousedown", function()
+	{
+		gui.App.quit();
+	});	
+	
+	//Minimize button.
+	$("#minButton").on("mousedown", function()
+	{
+		win.minimize();
+	});
+	
+	//Maximize button.
+	$("#fullButton").on("mousedown", function()
+	{
+		win.maximize();
+	});
+	
+	$("#title").on("mousedown", function()
+	{
+		$("#info").fadeIn(null, function()
+		{
+			$("#address").focus();
+			$("#address").select();
+		});
+	});
+	
+	//Keydown in address bar.
+	$("#address").on("keydown", function (e) 
+	{
+		//Enter is pressed.
+  		if (e.which == 13) 
+		{
+			//Hide the info page. 
+    		$("#info").hide();
+			//Get the value of the address bar.
+			var search = $("#address").val();
+
+			//If top level domain exists, and there is text on both sides of the dot.
+			if (tld.tldExists(search) && search.split(".").length > 1 && search.split(".")[0].length > 0)
+			{
+				if (!/^https?/ig.test(search))
+				{
+					search = "http://" + search;
+				}
+				
+				$("#title").text(search);	
+			}
+			else
+			{
+				$("#title").text(search);
+				search = "https://www.google.com/search?q=" + search;
+			}
+			
+			$("#view").attr("src", search);
+  		}
+	});
+	
+	$("#info").on("keydown", function(e)
+	{
+		if (e.which == 27)
+		{
+			$("#info").hide();
+		}
+	})
+});
+
 win.on("document-end", function(frame) 
 {
-
-    if (frame && frame.hasOwnProperty("id"))
+    if (frame && frame.hasOwnProperty("id") && frame.id === "view")
     {
-        if (frame.id === "view")
+        setTimeout(function()
         {
-            setTimeout(function()
-            {
-                getBarColor();
-            },100);
-            
-        }
+            getBarColor();
+        },100);
     }
 });
 
@@ -38,24 +103,23 @@ function getBarColor()
 {
     win.capturePage( function(img) 
     {   
-        var canvas = win.window.document.getElementById("color").getContext("2d");
-        var image = win.window.document.getElementById("colorImage");
+        var canvas = document.getElementById("color").getContext("2d");
+        var image = document.getElementById("colorImage");
         
         image.src = img;
         
         canvas.drawImage(image,0,0);
         
-        var pixelData = canvas.getImageData(5, 32, 1, 1).data;
+        var pixelData = canvas.getImageData(5, 35, 1, 1).data;
         
-        win.window.document.getElementById("bar").style.backgroundColor = 'rgb(' + [pixelData[0],pixelData[1],pixelData[2]].join(',') + ')';
+		document.getElementById("bar").style.backgroundColor = 'rgb(' + [pixelData[0],pixelData[1],pixelData[2]].join(',') + ')';
         var inv = idealTextColor({R: pixelData[0], G: pixelData[1], B: pixelData[2]});
         
-        
-        
-        
-        win.window.document.getElementById("title").style.color = inv;
-        
-    
+        document.getElementById("title").innerHTML = document.getElementById("view").contentDocument.title;
+        document.getElementById("title").style.color = inv;
+		
+		$("#address").val($("#view")[0].contentWindow.location.href);
+		$("#address").attr("border-color",  'rgb(' + [pixelData[0],pixelData[1],pixelData[2]].join(',') + ')');
         
     }, "png");
 }
