@@ -11,5 +11,8 @@
   },
   "dependencies": {
     "tldjs": "^1.5.2"
+  },
+  "webkit": {
+    "plugin": true
   }
 }
