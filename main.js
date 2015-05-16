@@ -88,6 +88,12 @@ $(function()
 	})
 });
 
+//Force links that target _blank to open in the same frame (until tabs are implemented?).
+win.on("new-win-policy", function(frame, url, policy)
+{
+	policy.forceCurrent();
+});
+
 win.on("document-end", function(frame) 
 {
     if (frame && frame.hasOwnProperty("id") && frame.id === "view")
