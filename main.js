@@ -134,9 +134,6 @@ function getBarColor()
 		
 		//Set the address bar url to the current url.
 		$("#address").val($("#view")[0].contentWindow.location.href);
-
-		//Experimenting with using the accent color in more places.
-		$("#address").css("border-color",  'rgb(' + [pixelData[0],pixelData[1],pixelData[2]].join(',') + ')');
         
     }, "png");
 }
