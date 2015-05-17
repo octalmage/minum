@@ -141,11 +141,10 @@ function getBarColor()
     }, "png");
 }
 
-function idealTextColor(bgColor) 
+function idealTextColor(components) 
 {
 
    var nThreshold = 105;
-   var components = bgColor;
    var bgDelta = (components.R * 0.299) + (components.G * 0.587) + (components.B * 0.114);
 
    return ((255 - bgDelta) < nThreshold) ? "#000000" : "#ffffff";   
