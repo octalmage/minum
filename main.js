@@ -107,25 +107,35 @@ win.on("document-end", function(frame)
 
 function getBarColor()
 {
-    win.capturePage( function(img) 
+    win.capturePage(function(img) 
     {   
         var canvas = document.getElementById("color").getContext("2d");
         var image = document.getElementById("colorImage");
         
         image.src = img;
         
+        //Draw the image to our invisible canvas. 
         canvas.drawImage(image,0,0);
         
+        //Get the pixel color right below the titlebar. 
         var pixelData = canvas.getImageData(5, 35, 1, 1).data;
         
+        //Change the title bar background color to the color found above. 
 		document.getElementById("bar").style.backgroundColor = 'rgb(' + [pixelData[0],pixelData[1],pixelData[2]].join(',') + ')';
+
+		//Get the color the title bar text should be based on the title bar background. Currently black or white. 
         var inv = idealTextColor({R: pixelData[0], G: pixelData[1], B: pixelData[2]});
         
+        //Set the title bar text.
         document.getElementById("title").innerHTML = document.getElementById("view").contentDocument.title;
+
+        //Set the title bar text color. 
         document.getElementById("title").style.color = inv;
 		
+		//Set the address bar url to the current url.
 		$("#address").val($("#view")[0].contentWindow.location.href);
 		$("#address").attr("border-color",  'rgb(' + [pixelData[0],pixelData[1],pixelData[2]].join(',') + ')');
+		//Experimenting with using the accent color in more places.
         
     }, "png");
 }
