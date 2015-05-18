@@ -11,7 +11,7 @@ if (process.platform === "darwin")
 	{
 		type: "menubar"
 	});
-	nativeMenuBar.createMacBuiltin("Hot Gifs");
+	nativeMenuBar.createMacBuiltin("minum");
 	win.menu = nativeMenuBar;
 }
 
