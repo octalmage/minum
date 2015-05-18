@@ -79,9 +79,19 @@ $(function()
   		}
 	});
 	
+	//If exit is pressed leave info screen.
 	$("#info").on("keydown", function(e)
 	{
-		if (e.which == 27)
+		if (e.which === 27)
+		{
+			$("#info").hide();
+		}
+	})
+
+	//Leave info screen if background is clicked.
+	$("#info").on("mousedown", function(e)
+	{
+		if (e.target.id === "info")
 		{
 			$("#info").hide();
 		}
