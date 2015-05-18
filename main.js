@@ -56,12 +56,14 @@ $(function()
 		{
 			//Hide the info page. 
     		$("#info").hide();
+
 			//Get the value of the address bar.
 			var search = $("#address").val();
 
 			//If top level domain exists, and there is text on both sides of the dot.
 			if (tld.tldExists(search) && search.split(".").length > 1 && search.split(".")[0].length > 0)
 			{
+				//Add http to the url if it's missing.
 				if (!/^https?/ig.test(search))
 				{
 					search = "http://" + search;
