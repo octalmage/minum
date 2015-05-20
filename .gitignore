@@ -1,2 +1,4 @@
 .atom-build.json
 node_modules
+build
+cache
