@@ -9,6 +9,8 @@ minum is a minimal web browser inspired by the fake browsers used in portfolios.
 
 Click the website's title to view the address bar, type in a URL or search term, then press enter to go!
 
+![](https://cldup.com/YUGXUr093Q.gif)
+
 ## Screenshots
 
 ![](http://40.media.tumblr.com/d11eb3efce518e5bc44b936643b9bbc2/tumblr_no8x76bInz1qz6oq7o2_1280.png)
