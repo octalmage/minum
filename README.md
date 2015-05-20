@@ -1,7 +1,7 @@
 ![](https://cloud.githubusercontent.com/assets/1672613/7729967/3fea76a6-fedd-11e4-90d9-3f538e6dcd63.png)
 
 ![](http://41.media.tumblr.com/6fd06309c8a378665f1d6094925d76b6/tumblr_no8x76bInz1qz6oq7o5_1280.png)
-**[Download](https://github.com/octalmage/minum/releases/latest) | [Blog](http://octalmage.com/tagged/minum)**
+### [Download](https://github.com/octalmage/minum/releases/latest) | [Blog](http://octalmage.com/tagged/minum)
 ## Description
 minum is a minimal web browser inspired by the fake browsers used in portfolios. minum showcases the website, the way it's suppose to be. 
 
