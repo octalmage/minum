@@ -88,7 +88,7 @@ $(function()
 		{
 			$("#info").hide();
 		}
-	})
+	});
 
 	//Leave info screen if background is clicked.
 	$("#info").on("mousedown", function(e)
@@ -97,7 +97,7 @@ $(function()
 		{
 			$("#info").hide();
 		}
-	})
+	});
 });
 
 //Force links that target _blank to open in the same frame (until tabs are implemented?).
