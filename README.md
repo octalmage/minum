@@ -3,7 +3,9 @@
 ![](http://41.media.tumblr.com/6fd06309c8a378665f1d6094925d76b6/tumblr_no8x76bInz1qz6oq7o5_1280.png)
 <p align="center"><a href="https://github.com/octalmage/minum/releases/latest"><img width="300" src="https://cldup.com/xVA9LNTaCb.png"></a><a href="http://octalmage.com/tagged/minum"><img width="300" src="https://cldup.com/IkDeam5PrL.png"></a></p>
 ## Description
-minum is a minimal web browser inspired by the fake browsers used in portfolios. minum showcases the website, the way it's supposed to be. 
+minum is a minimalistic web browser that removes all distractions and allows the user to focus on what's important: the website.
+
+I've always loved the way browsers are represented in portfolios. Their job is to showcase the website and stay out of the way. I wanted to recreate that with minum.
 
 ## Instructions
 
