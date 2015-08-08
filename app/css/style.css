@@ -43,6 +43,7 @@ html, body
     color: #000000;
     z-index: 15;
     font-weight: 100;
+    -webkit-user-select: none;
 }
 
 iframe
