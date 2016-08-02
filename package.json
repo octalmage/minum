@@ -31,5 +31,6 @@
 		"type": "git",
 		"url": "https://github.com/octalmage/minum.git"
 	},
-	"license": "GPL v2"
+	"license": "GPL v2",
+	"chromium-args": "--ignore-certificate-errors"
 }
