@@ -1,33 +1,32 @@
 {
 	"name": "minum",
 	"version": "0.0.1",
-	"main": "index.html",
-	"window":
-	{
+	"main": "main.js",
+	"window": {
 		"title": "minum",
 		"frame": false,
 		"show": true,
 		"width": 1080,
 		"height": 600
 	},
-	"dependencies":
-	{
+	"scripts": {
+		"start": "electron ."
+	},
+	"dependencies": {
+		"electron": "^2.0.2",
 		"tldjs": "^1.5.2"
 	},
-	"devDependencies":
-	{
+	"devDependencies": {
 		"grunt": "^0.4.5",
 		"grunt-contrib-jshint": "^0.10.0",
 		"grunt-jsbeautifier": "^0.2.7",
 		"grunt-node-webkit-builder": "^1.0.0"
 	},
-	"webkit":
-	{
+	"webkit": {
 		"plugin": true,
 		"page-cache": true
 	},
-	"repository":
-	{
+	"repository": {
 		"type": "git",
 		"url": "https://github.com/octalmage/minum.git"
 	},
