@@ -23,8 +23,7 @@ $(function()
 
   $("#title").on("mousedown", function()
   {
-    $("#info").fadeIn(null, function()
-    {
+    $("#info").show(5, () => {
       $("#address").focus();
       $("#address").select();
     });
@@ -82,9 +81,14 @@ $(function()
   });
 });
 
-document.querySelector('webview').addEventListener("dom-ready", function()
+document.querySelector('webview').addEventListener('dom-ready', function()
 {
   getBarColor();
+});
+
+document.querySelector('webview').addEventListener('new-window', function(event)
+{
+  $('#view').attr('src', event.url);
 });
 
 function getBarColor()
