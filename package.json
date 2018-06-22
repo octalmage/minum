@@ -1,34 +1,48 @@
 {
 	"name": "minum",
-	"version": "0.0.1",
+	"version": "0.1.0",
 	"main": "main.js",
-	"window": {
-		"title": "minum",
-		"frame": false,
-		"show": true,
-		"width": 1080,
-		"height": 600
-	},
 	"scripts": {
-		"start": "electron ."
+		"start": "electron .",
+		"lint": "eslint .",
+		"build": "electron-builder"
 	},
 	"dependencies": {
-		"electron": "^2.0.2",
 		"tldjs": "^1.5.2"
 	},
 	"devDependencies": {
-		"grunt": "^0.4.5",
-		"grunt-contrib-jshint": "^0.10.0",
-		"grunt-jsbeautifier": "^0.2.7",
-		"grunt-node-webkit-builder": "^1.0.0"
-	},
-	"webkit": {
-		"plugin": true,
-		"page-cache": true
+		"electron": "^2.0.2",
+		"electron-builder": "^20.15.1",
+		"eslint": "^4.19.1",
+		"eslint-config-airbnb-base": "^13.0.0",
+		"eslint-plugin-import": "^2.12.0"
 	},
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/octalmage/minum.git"
 	},
-	"license": "GPL v2"
+	"license": "GPL v2",
+	"build": {
+    "appId": "com.octalmage.minum",
+    "productName": "minum",
+    "asar": true,
+    "directories": {
+      "output": "build"
+    },
+    "mac": {
+      "icon": "./logo.icns",
+      "target": [
+        {
+          "target": "zip",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "publish": {
+      "provider": "github",
+      "owner": "octalmage"
+    }
+  }
 }

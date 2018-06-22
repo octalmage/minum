@@ -1,32 +1,35 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
 const { app, BrowserWindow } = require('electron');
 
 let mainWindow;
 
-function createWindow () {
-	mainWindow = new BrowserWindow({
-		"title": "minum",
-		"frame": false,
-		"show": true,
-		"width": 1080,
-		"height": 600
-	});
+function createWindow() {
+  mainWindow = new BrowserWindow({
+    title: 'minum',
+    frame: false,
+    width: 1080,
+    height: 600,
+    show: false,
+  });
 
   mainWindow.loadFile('index.html');
 
-  mainWindow.on('closed', function () {
-    mainWindow = null
+  mainWindow.on('closed', () => {
+    mainWindow = null;
   });
-};
+
+  mainWindow.once('ready-to-show', () => {
+    mainWindow.show();
+  });
+}
 
 app.on('ready', createWindow);
 
-app.on('window-all-closed', function () {
-  if (process.platform !== 'darwin') {
-    app.quit();
-  }
+app.on('window-all-closed', () => {
+  app.quit();
 });
 
-app.on('activate', function () {
+app.on('activate', () => {
   if (mainWindow === null) {
     createWindow();
   }
