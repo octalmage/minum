@@ -16,11 +16,7 @@ $(() => {
 
   // Maximize button.
   $('#fullButton').on('mousedown', () => {
-    if (win.isMaximized()) {
-      win.unmaximize();
-    } else {
-      win.maximize();
-    }
+    win.setFullScreen(!win.isFullScreen());
   });
 
   $('#title').on('mousedown', () => {
