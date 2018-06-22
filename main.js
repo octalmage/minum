@@ -1,5 +1,8 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 const { app, BrowserWindow } = require('electron');
+const { autoUpdater } = require('electron-updater');
+
+autoUpdater.checkForUpdatesAndNotify();
 
 let mainWindow;
 

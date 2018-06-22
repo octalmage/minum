@@ -1,28 +1,29 @@
 {
-	"name": "minum",
-	"version": "0.1.0",
-	"main": "main.js",
-	"scripts": {
-		"start": "electron .",
-		"lint": "eslint .",
-		"build": "electron-builder"
-	},
-	"dependencies": {
-		"tldjs": "^1.5.2"
-	},
-	"devDependencies": {
-		"electron": "^2.0.2",
-		"electron-builder": "^20.15.1",
-		"eslint": "^4.19.1",
-		"eslint-config-airbnb-base": "^13.0.0",
-		"eslint-plugin-import": "^2.12.0"
-	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/octalmage/minum.git"
-	},
-	"license": "GPL v2",
-	"build": {
+  "name": "minum",
+  "version": "0.1.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "lint": "eslint .",
+    "build": "electron-builder"
+  },
+  "dependencies": {
+    "electron-updater": "^2.21.10",
+    "tldjs": "^1.5.2"
+  },
+  "devDependencies": {
+    "electron": "^2.0.2",
+    "electron-builder": "^20.15.1",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^13.0.0",
+    "eslint-plugin-import": "^2.12.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/octalmage/minum.git"
+  },
+  "license": "GPL v2",
+  "build": {
     "appId": "com.octalmage.minum",
     "productName": "minum",
     "asar": true,
