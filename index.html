@@ -3,37 +3,38 @@
   <head>
     <title>minum</title>
   </head>
-  
+
   <link href="http://fonts.googleapis.com/css?family=Roboto:400,300,700,100" rel="stylesheet" type="text/css">
   <link href="app/css/style.css" rel="stylesheet" type="text/css">
-  
+
+  <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
   <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
   <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-  
-  <script src="main.js"></script>
-  
+  <script>if (window.module) module = window.module;</script>
+
   <body>
   <div id="bar">
       <span id="title">minum</span>
   </div>
-  
-  <iframe nwdisable nwfaketop nwUserAgent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.52 Safari/537.36" id="view" src="https://google.com"></iframe>
-  
+
+  <webview nwdisable nwfaketop nwUserAgent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.52 Safari/537.36" id="view" src="https://google.com"></webview>
+
   <div id="info">
-  
+
       <input type="text" id="address" value="https://google.com">
-  
+
   </div>
-  
+
   <div id="close">
-  <img id="fullButton" src="app/img/green.png">
-  <img id="minButton" src="app/img/yellow.png">
-  <img id="closeButton" src="app/img/red.png">
-  
-  
+    <img id="fullButton" src="app/img/green.png">
+    <img id="minButton" src="app/img/yellow.png">
+    <img id="closeButton" src="app/img/red.png">
+  </div>
+
   <img id="colorImage" src="">
   <canvas id="color"></canvas>
-</div>
-  
+
+<script src="renderer.js"></script>
+
   </body>
 </html>
