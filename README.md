@@ -31,5 +31,5 @@ Click the website's title to view the address bar, type in a URL or search term,
 * Delicious bookmark integration.
 * Extensions (CSS and JavaScript injection).
 
-##License
+## License
 GPL v2
