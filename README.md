@@ -2,7 +2,9 @@
 
 ![](http://41.media.tumblr.com/6fd06309c8a378665f1d6094925d76b6/tumblr_no8x76bInz1qz6oq7o5_1280.png)
 <p align="center"><a href="https://github.com/octalmage/minum/releases/latest"><img width="300" src="https://cldup.com/xVA9LNTaCb.png"></a><a href="http://octalmage.com/tagged/minum"><img width="300" src="https://cldup.com/IkDeam5PrL.png"></a></p>
+
 ## Description
+
 minum is a minimalistic web browser that removes all distractions and allows the user to focus on what's important: the website.
 
 I've always loved the way browsers are represented in portfolios. Their job is to showcase the website and stay out of the way. I wanted to recreate that with minum.
@@ -24,10 +26,10 @@ Click the website's title to view the address bar, type in a URL or search term,
 ![](http://40.media.tumblr.com/641e343d918ad4551543db4bba450fdd/tumblr_no8x76bInz1qz6oq7o1_1280.png)
 
 ## Plans
-* Multiple tabs. 
-* Built in screenshot  tool. 
-* Delicious bookmark integration. 
-* Extensions (CSS and JavaScript injection). 
+* Multiple tabs.
+* Built in screenshot  tool.
+* Delicious bookmark integration.
+* Extensions (CSS and JavaScript injection).
 
 ##License
 GPL v2
