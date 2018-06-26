@@ -13,6 +13,7 @@ function createWindow() {
     width: 1080,
     height: 600,
     show: false,
+    backgroundColor: '#ffffff',
   });
 
   mainWindow.loadFile('index.html');
