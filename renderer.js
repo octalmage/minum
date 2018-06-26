@@ -77,16 +77,25 @@ function idealTextColor(components) {
 
 function getBarColor() {
   document.querySelector('webview').capturePage((img) => {
-    const canvas = document.getElementById('color').getContext('2d');
+    const canvas = document.getElementById('color');
+    const context = canvas.getContext('2d');
     const image = document.getElementById('colorImage');
     image.src = img.toDataURL();
 
     image.onload = () => {
+      // Reset the canvas before drawing our image.
+      context.clearRect(0, 0, canvas.width, canvas.height);
       // Draw the image to our invisible canvas.
-      canvas.drawImage(image, 0, 0);
+      context.drawImage(image, 0, 0);
 
       // Get the pixel color right below the titlebar.
-      const pixelData = canvas.getImageData(0, 0, 1, 1).data;
+      let pixelData = context.getImageData(0, 0, 1, 1).data;
+
+      // If background is transparent it will appear white so make the titlebar match.
+      if (pixelData.every((v, i) => v === [0, 0, 0, 0][i])) {
+        pixelData = [255, 255, 255, 255];
+      }
+
       // Change the title bar background color to the color found above.
       document.getElementById('bar').style.backgroundColor = `rgb(${[pixelData[0], pixelData[1], pixelData[2]].join(',')})`;
 
