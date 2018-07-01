@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "electron-updater": "^2.21.10",
+    "nprogress": "^0.2.0",
     "tldjs": "^1.5.2"
   },
   "devDependencies": {

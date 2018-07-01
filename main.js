@@ -30,10 +30,20 @@ function createWindow() {
     label: 'minum',
     submenu: [
       { label: 'About minum', selector: 'orderFrontStandardAboutPanel:' },
+      {
+        label: 'Toggle Developer Tools',
+        accelerator: 'Alt+Command+I',
+        click: (item, focusedWindow) => {
+          if (focusedWindow) {
+            focusedWindow.toggleDevTools();
+          }
+        },
+      },
       { type: 'separator' },
       { label: 'Quit', accelerator: 'Command+Q', click: () => { app.quit(); } },
     ],
-  }, {
+  },
+  {
     label: 'Edit',
     submenu: [
       { label: 'Undo', accelerator: 'CmdOrCtrl+Z', selector: 'undo:' },

@@ -1,28 +1,27 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>minum</title>
-  </head>
+<head>
+  <title>minum</title>
+</head>
 
-  <link href="http://fonts.googleapis.com/css?family=Roboto:400,300,700,100" rel="stylesheet" type="text/css">
-  <link href="app/css/style.css" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Roboto:400,300,700,100" rel="stylesheet" type="text/css">
+<link href="app/css/style.css" rel="stylesheet" type="text/css">
+<link href="node_modules/nprogress/nprogress.css" rel="stylesheet" type="text/css">
 
-  <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
-  <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-  <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-  <script>if (window.module) module = window.module;</script>
+<!-- Hack to allow jQuery to work -->
+<script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script>if (window.module) module = window.module;</script>
 
-  <body>
+<body>
   <div id="bar">
-      <span id="title">minum</span>
+    <span id="title">minum</span>
   </div>
 
-  <webview nwdisable nwfaketop nwUserAgent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.52 Safari/537.36" id="view" src="https://google.com"></webview>
-
+  <webview id="view" src="https://google.com"></webview>
   <div id="info">
-
-      <input type="text" id="address" value="https://google.com">
-
+    <input type="text" id="address" value="https://google.com">
   </div>
 
   <div id="close">
@@ -31,10 +30,10 @@
     <img id="closeButton" src="app/img/red.png">
   </div>
 
-  <img id="colorImage" src="">
+  <img id="colorImage">
   <canvas id="color"></canvas>
 
-<script src="renderer.js"></script>
+  <script src="renderer.js"></script>
 
-  </body>
+</body>
 </html>
