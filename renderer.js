@@ -36,7 +36,6 @@ $(() => {
 
       // Get the value of the address bar.
       let search = $('#address').val();
-      const url = new URL(search);
 
       // If top level domain exists, and there is text on both sides of the dot.
       if (tld.tldExists(search) && search.split('.').length > 1 && search.split('.')[0].length > 0) {
@@ -46,10 +45,6 @@ $(() => {
         }
 
         $('#title').text(search);
-      } else if (['127.0.0.1', 'localhost'].includes(url.hostname)) {
-        if (!/^https?/ig.test(search)) {
-          search = `http://${search}`;
-        }
       } else {
         $('#title').text(search);
         search = `https://www.google.com/search?q=${search}`;
@@ -121,16 +116,13 @@ function getBarColor() {
   });
 }
 
-document.querySelector('webview').addEventListener('dom-ready', () => {
-  getBarColor();
-});
-
 document.querySelector('webview').addEventListener('did-start-loading', () => {
   NProgress.start();
 });
 
 document.querySelector('webview').addEventListener('did-stop-loading', () => {
   NProgress.done();
+  getBarColor();
 });
 
 document.querySelector('webview').addEventListener('new-window', (event) => {
