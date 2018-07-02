@@ -1,6 +1,7 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 const { remote } = require('electron');
 const tld = require('tldjs');
+const NProgress = require('nprogress');
 
 const win = remote.getCurrentWindow();
 $(() => {
@@ -115,7 +116,12 @@ function getBarColor() {
   });
 }
 
-document.querySelector('webview').addEventListener('dom-ready', () => {
+document.querySelector('webview').addEventListener('did-start-loading', () => {
+  NProgress.start();
+});
+
+document.querySelector('webview').addEventListener('did-stop-loading', () => {
+  NProgress.done();
   getBarColor();
 });
 
